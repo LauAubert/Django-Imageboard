@@ -1,0 +1,84 @@
+/* https://coolors.co/e1b07e-e5be9e-cbc0ad-86a397-361d2e */
+body{
+    margin: auto;
+    /* font-size: 0; */
+    background-color: #273469;
+}
+
+ .caja{
+     width: calc(97vw/6);
+     height: calc(97vw/6);
+     margin: 2px;
+     background-size: cover;
+     background-position:center;
+     display: inline-block;
+     box-sizing: border-box;
+     position: relative;
+     text-align: left   ;
+     border-radius: 9px;
+ }
+.caja .titulo{
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    margin: auto;
+    display: block;
+    font-weight: 500;
+    color: white;
+    font-size: 20px;
+    width: 96%;
+    bottom: 0;
+    padding: 5px;
+    background: linear-gradient(0deg,#00000073 70%,transparent);
+    border-radius: 9px;
+}
+.caja .info{
+    font-family: Arial, Helvetica, sans-serif;
+    top:5%;
+    left:5%;
+    position: relative;
+    width: 90px;
+    border-radius: 7px;
+    background-color: red;
+    font-size: 14px;
+}
+.caja .info div{
+    display: inline-block;
+    color: white;
+    padding-left: 9px;
+}
+.caja .info .comentarios{
+    font-weight: 600;
+    background-color: #30343F ;
+    width:30px;
+}
+.caja:hover {
+    bottom: 15px ;
+    cursor: pointer;
+}
+
+
+@media (max-width:1116px){
+    .caja{
+        width: calc(96vw/5);
+        height: calc(96vw/5);
+    }
+}
+@media (max-width:997px){
+    .caja{
+        width: calc(96vw/4);
+        height: calc(96vw/4);
+    }
+}
+@media (max-width:782px){
+    .caja{
+        width: calc(96vw/3);
+        height: calc(96vw/3);
+    }
+}
+
+@media (max-width:688px){
+    .caja{
+        width: calc(92vw/2);
+        height: calc(92vw/2);
+    }
+} 

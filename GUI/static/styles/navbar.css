@@ -1,0 +1,50 @@
+body{
+    margin: 0%;
+}
+nav{
+    background-color: #30343F;
+    height: 30px;
+    padding-left: 15px;
+    padding-top: 11px;
+    position: fixed;
+    z-index: 50;
+    width: 100%;
+}
+.contenido{
+    margin: auto;
+    padding-top: 45px;
+    font-size: 0;
+    text-align: center;
+}
+nav * {
+    display: inline-block;
+    position: relative;
+}
+nav .icon{
+    bottom:24px;
+    color: white;
+}
+nav p{
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 20px;
+    bottom: 24px;
+    margin-left: 10px;
+    color: white;
+}
+
+.right{
+    display: block;
+    top: 26px;
+    right: 15px;
+    margin-right: 15px;
+    float: right;    
+    width: auto;
+    height: auto;
+}
+.right .icon{
+    margin-left:10px;
+}
+
+nav .icon:hover{
+    color: gray;
+}
