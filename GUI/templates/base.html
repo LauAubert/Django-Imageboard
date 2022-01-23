@@ -12,16 +12,33 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href= "{% static 'styles/aside.css' %}">
 
 {% block styles %}
 {% endblock styles %}
 </head>
 <body>
     <nav>
+        <aside class="hidden">
+            <div class="item">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="item">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="item">
+                <i class="fas fa-bell"></i>
+            </div>
+            <div class="item">
+                <i class="fas fa-user"></i> 
+                <p class="aside-text">CATEGORIAS</p>
+                <i class="fas fa-chevron-down right-aside"></i>
+            </div>
+
+        </aside>
         <div class="icon menu">
             <i class="fas fa-bars fa-lg"></i>
-        </div>
-        <p>Boardy</p> 
+        </div><p class="title">Boardy</p> 
         <div class="right">  
             <div class="icon search">
                 <i class="fas fa-search fa-lg"></i>
@@ -36,13 +53,14 @@
                 <i class="fas fa-plus-circle fa-lg"></i>
             </div>
         </div>
-        </nav>
+    </nav>
         <div class="contenido">
         {% block content %}
         {% endblock content %}
         </div>
         
-        
+        <div class="overlay hidden"></div>
+        <script src="{% static 'scripts/aside.js' %}"></script>
         {% block js %}
         {% endblock js %}
     </body>

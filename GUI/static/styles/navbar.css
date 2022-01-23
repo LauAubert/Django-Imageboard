@@ -2,7 +2,7 @@ body{
     margin: 0%;
 }
 nav{
-    background-color: #30343F;
+    background-color: var(--color2);
     height: 30px;
     padding-left: 15px;
     padding-top: 11px;
@@ -22,14 +22,14 @@ nav * {
 }
 nav .icon{
     bottom:24px;
-    color: white;
+    color: var(--color4);
 }
-nav p{
+nav .title{
     font-family: 'Alfa Slab One', cursive;
     font-size: 20px;
     bottom: 24px;
     margin-left: 10px;
-    color: white;
+    color: var(--color4);
 }
 
 .right{
@@ -46,5 +46,5 @@ nav p{
 }
 
 nav .icon:hover{
-    color: gray;
+    color: var(--color3);
 }

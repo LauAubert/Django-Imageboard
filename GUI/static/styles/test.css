@@ -1,8 +1,8 @@
-/* https://coolors.co/e1b07e-e5be9e-cbc0ad-86a397-361d2e */
+/* https://www.csscolorpalettes.com/palettes/1435    */
 body{
     margin: auto;
     /* font-size: 0; */
-    background-color: #273469;
+    background-color: var(--color1);
 }
 
  .caja{
@@ -23,7 +23,7 @@ body{
     margin: auto;
     display: block;
     font-weight: 500;
-    color: white;
+    color: var(--color4);
     font-size: 20px;
     width: 96%;
     bottom: 0;
@@ -38,18 +38,20 @@ body{
     position: relative;
     width: 90px;
     border-radius: 7px;
-    background-color: red;
+    background-color: var(--color3);
     font-size: 14px;
 }
 .caja .info div{
     display: inline-block;
-    color: white;
+    color: var(--color4);
     padding-left: 9px;
 }
 .caja .info .comentarios{
     font-weight: 600;
     background-color: #30343F ;
     width:30px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 .caja:hover {
     bottom: 15px ;
@@ -82,3 +84,10 @@ body{
         height: calc(92vw/2);
     }
 } 
+
+body{
+    --color1:#222831;
+    --color2:#393e46;
+    --color3:#0092ca;
+    --color4:#eeeeee;
+}
