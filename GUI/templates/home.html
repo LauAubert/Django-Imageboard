@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Boardy - Home
+{% endblock titulo %}
+    
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/test.css' %}">
+
+{% endblock styles %}
+    
+
+{% block content %}
+<div class="hilos">
+{% for i in range %}
+<div class="caja img-1">
+    <div class="info">
+        <div class="categoria">RZD</div>
+        <div class="comentarios">99</div>
+    </div>
+    <p class="titulo">{{i}} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint.</p>
+</div>
+{% endfor %}
+</div>
+
+
+<p class="url" hidden>{% static 'resources/play.jpg' %}</p>
+<script>
+    const cajas = document.querySelectorAll('.caja')
+    document.querySelector('.caja').style.backgroundImage = `url("${document.querySelector('p.url').textContent}")`
+    for (caja of cajas){
+        caja.style.backgroundImage = `url("${document.querySelector('p.url').textContent}")`
+    }
+</script>
+{% endblock content %}
+    
