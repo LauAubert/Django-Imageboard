@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href= "{% static 'styles/aside.css' %}">
+<link rel="stylesheet" href= "{% static 'styles/scrollbar.css' %}">
 
 {% block styles %}
 {% endblock styles %}
@@ -21,7 +22,32 @@
     <nav>
         <aside class="hidden">
             <div class="item">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-certificate"></i> 
+                <p class="aside-text">OPCIÓN 1</p>
+            </div>
+            <div class="item">
+                <i class="fas fa-user"></i> 
+                <p class="aside-text">CATEGORIAS</p>
+            </div>
+            <div class="item" id="categorias" >
+                <i class="fas fa-bars"></i> 
+                <p class="aside-text">CATEGORIAS</p>
+                <i class="fas fa-chevron-down right-aside"></i>
+            </div>
+            <div class="categorias hidden">
+                <div class="subitem">
+                    <i class="far fa-circle fa-xs"></i>
+                    <p class="aside-text">awudiawu</p>
+                    <input type="checkbox" name="" id="">
+                </div>
+                <div class="subitem">
+                    <i class="far fa-circle fa-xs"></i>
+                    <p class="aside-text">awudiawu</p>
+                    <input type="checkbox" name="" id="">
+                </div>
+            </div>
+            <div class="item">
+                <i class="fas fa-book"></i>
             </div>
             <div class="item">
                 <i class="fas fa-search"></i>
@@ -29,11 +55,9 @@
             <div class="item">
                 <i class="fas fa-bell"></i>
             </div>
-            <div class="item">
-                <i class="fas fa-user"></i> 
-                <p class="aside-text">CATEGORIAS</p>
-                <i class="fas fa-chevron-down right-aside"></i>
-            </div>
+
+            
+            
 
         </aside>
         <div class="icon menu">

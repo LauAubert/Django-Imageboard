@@ -8,18 +8,37 @@ aside {
     left:0;
     transform: translateX(0);
     transition: .3s ease-in-out;
+    overflow-x: scroll;
 }
 
 aside.hidden{
     transform: translateX(-100%);
     transition: .3s ease-in-out;
 }
-.item{
+aside .item{
     position: relative;
+    user-select: none;
     width: 100%;
     height: 40px;
     box-sizing: border-box;
     border: 1px solid var(--color3);
+}
+
+.subitem{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    border: 1px solid var(--color2);
+}
+.subitem .far{
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 28px;
+    color: var(--color4);    
+}
+.subitem input{
+    margin-top: 12px;
 }
 .item .fas{
     padding:12px;
@@ -41,7 +60,7 @@ aside.hidden{
     color: var(--color4);
 }
 
-.item:hover{
+.item:hover, .subitem:hover{
     background-color: rgba(0, 0, 0, .2);
 }
 .overlay{
@@ -57,4 +76,21 @@ aside.hidden{
     top:100vh;
     background-color: rgba(0, 0, 0, 0);
     transition: background-color .2s linear;
+}
+
+.categorias.hidden{
+    height: 0;
+    position: absolute;
+    overflow: hidden;
+}
+.categorias{
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.item.activo .right-aside{
+    transform: rotate(45);
+    color: red;
 }

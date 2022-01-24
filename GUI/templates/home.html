@@ -25,13 +25,33 @@
 {% endfor %}
 
 
-<p class="url" hidden>{% static 'resources/play.jpg' %}</p>
-<script>
-    const cajas = document.querySelectorAll('.caja')
-    document.querySelector('.caja').style.backgroundImage = `url("${document.querySelector('p.url').textContent}")`
-    for (caja of cajas){
-        caja.style.backgroundImage = `url("${document.querySelector('p.url').textContent}")`
-    }
-</script>
+<div class="random-img">
+    <p class="url" hidden>{% static 'resources/android.jpg' %}</p>
+    <p class="url" hidden>{% static 'resources/ciudad.jpg' %}</p>
+    <p class="url" hidden>{% static 'resources/dragon.jpg' %}</p>
+    <p class="url" hidden>{% static 'resources/gym.jpg' %}</p>
+    <p class="url" hidden>{% static 'resources/hexagonos.jpg' %}</p>
+    <p class="url" hidden>{% static 'resources/laptop.jpeg' %}</p>
+    <p class="url" hidden>{% static 'resources/light.jpg' %}</p>
+    <p class="url" hidden>{% static 'resources/mate.jpg' %}</p>
+    <p class="url" hidden>{% static 'resources/palmeras.jpeg' %}</p>
+    <p class="url" hidden>{% static 'resources/tanjiro.jpg' %}</p>
+    <p class="url" hidden>{% static 'resources/zeri.jpg' %}</p>
+    <p class="url" hidden>{% static 'resources/play.jpg' %}</p>
+    <script>
+        const cajas = document.querySelectorAll('.caja')
+        const imagenes = document.querySelectorAll('.url')
+        for (imagen of imagenes){
+            imagen.remove()
+        }
+        for (caja of cajas){
+            var random = Math.floor(Math.random()*imagenes.length)
+            caja.style.backgroundImage = `url("${imagenes[random].textContent}")`
+            console.log(imagenes[random].textContent)
+        }
+    </script>
+</div>
+
+
 {% endblock content %}
     

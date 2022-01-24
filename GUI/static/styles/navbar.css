@@ -19,6 +19,7 @@ nav{
 nav * {
     display: inline-block;
     position: relative;
+    user-select: none;
 }
 nav .icon{
     bottom:24px;
@@ -30,6 +31,7 @@ nav .title{
     bottom: 24px;
     margin-left: 10px;
     color: var(--color4);
+    user-select: none;
 }
 
 .right{
