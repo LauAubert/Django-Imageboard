@@ -14,6 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
 <link rel="stylesheet" href= "{% static 'styles/aside.css' %}">
 <link rel="stylesheet" href= "{% static 'styles/scrollbar.css' %}">
+<link rel="stylesheet" href= "{% static 'styles/newpost.css' %}">
 
 {% block styles %}
 {% endblock styles %}
@@ -27,7 +28,7 @@
             </div>
             <div class="item">
                 <i class="fas fa-user"></i> 
-                <p class="aside-text">CATEGORIAS</p>
+                <p class="aside-text">OPCIÓN 2</p>
             </div>
             <div class="item" id="categorias" >
                 <i class="fas fa-bars"></i> 
@@ -67,13 +68,13 @@
             <div class="icon search">
                 <i class="fas fa-search fa-lg"></i>
             </div>
-            <div class="icon bell">
+            <div class="icon bell"id='icon-notif'>
                 <i class="fas fa-bell fa-lg"></i>
             </div>
-            <div class="icon user"> 
+            <div class="icon user"id='icon-user'> 
                 <i class="fas fa-user fa-lg"></i>
             </div>
-            <div class="icon plus">
+            <div class="icon plus" id='new-thread'>
                 <i class="fas fa-plus-circle fa-lg"></i>
             </div>
         </div>
@@ -84,7 +85,39 @@
         </div>
         
         <div class="overlay hidden"></div>
+        <div class="add-post hidden" >
+            <h1>Crear hilo</h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="input-box-file">
+                    <h3 id="nombre-archivo"></h3>
+                    <input type="file" name="file" id="archivo" accept="image/*">
+                    <label for="archivo">
+                        <i class="fas fa-upload"></i>
+                    </label><div class="borrar-archivo">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Titulo" id='titulo'>
+                </div>
+                <div class="input-box">
+                    <select name="categ" id="selector-categoria">
+                        <option value="" selected>categoria</option>
+                        <option value="adaw">adad</option>
+                        <option value="adaw">adad</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <textarea type="text" id='texto' placeholder="Escribe el contenido de tu hilo..."></textarea>
+                </div>
+                <button type="submit" id='submit-post'>Subir</button>
+
+            </form>
+        </div>
+
         <script src="{% static 'scripts/aside.js' %}"></script>
+        <script src="{% static 'scripts/newthread.js' %}"></script>
         {% block js %}
         {% endblock js %}
     </body>
