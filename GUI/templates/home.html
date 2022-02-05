@@ -14,18 +14,18 @@
     
 
 {% block content %}
-{% for i in range %}
-<div class="caja img-1">
+{% for i in hilos %}
+<div class="caja" style="background-image: url(media/{{i.imagen}});">
     <div class="info">
-        <div class="categoria">RZD</div>
+        <div class="categoria">{{i.categoria.codigo}}</div>
         <div class="comentarios">99</div>
     </div>
-    <p class="titulo">{{i}} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint.</p>
+    <p class="titulo">{{i.titulo}}</p>
 </div>
 {% endfor %}
 
 
-<div class="random-img">
+<!-- <div class="random-img">
     <p class="url" hidden>{% static 'resources/android.jpg' %}</p>
     <p class="url" hidden>{% static 'resources/ciudad.jpg' %}</p>
     <p class="url" hidden>{% static 'resources/dragon.jpg' %}</p>
@@ -50,7 +50,7 @@
             console.log(imagenes[random].textContent)
         }
     </script>
-</div>
+</div> -->
 
 
 {% endblock content %}

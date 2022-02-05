@@ -63,7 +63,7 @@
         </aside>
         <div class="icon menu">
             <i class="fas fa-bars fa-lg"></i>
-        </div><p class="title">Boardy</p> 
+        </div><p class="title" onclick="window.location.href = '/'">Boardy</p> 
         <div class="right">  
             <div class="icon search">
                 <i class="fas fa-search fa-lg"></i>
@@ -87,7 +87,7 @@
         <div class="overlay hidden"></div>
         <div class="add-post hidden" >
             <h1>Crear hilo</h1>
-            <form action="" method="post">
+            <form action="/upload/" method="post" id='form-subir' enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="input-box-file">
                     <h3 id="nombre-archivo"></h3>
@@ -99,7 +99,7 @@
                     </div>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Titulo" id='titulo'>
+                    <input type="text" placeholder="Titulo" name="titulo" id='titulo'>
                 </div>
                 <div class="input-box">
                     <select name="categ" id="selector-categoria">
@@ -109,7 +109,7 @@
                     </select>
                 </div>
                 <div class="input-box">
-                    <textarea type="text" id='texto' placeholder="Escribe el contenido de tu hilo..."></textarea>
+                    <textarea type="text" id='texto' name="contenido" placeholder="Escribe el contenido de tu hilo..."></textarea>
                 </div>
                 <button type="submit" id='submit-post'>Subir</button>
 
