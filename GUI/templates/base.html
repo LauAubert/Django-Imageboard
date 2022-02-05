@@ -35,17 +35,15 @@
                 <p class="aside-text">CATEGORIAS</p>
                 <i class="fas fa-chevron-down right-aside"></i>
             </div>
+            
             <div class="categorias hidden">
-                <div class="subitem">
+            {% for categoria in categorias %}    
+                <a class="subitem" href="/{{categoria.codigo}}">
                     <i class="far fa-circle fa-xs"></i>
-                    <p class="aside-text">awudiawu</p>
-                    <input type="checkbox" name="" id="">
-                </div>
-                <div class="subitem">
-                    <i class="far fa-circle fa-xs"></i>
-                    <p class="aside-text">awudiawu</p>
-                    <input type="checkbox" name="" id="">
-                </div>
+                    <p class="aside-text">{{categoria.nombre}}</p>
+                    <!-- <input type="checkbox" name="" id=""> -->
+                </a>
+            {% endfor %}
             </div>
             <div class="item">
                 <i class="fas fa-book"></i>
@@ -103,9 +101,10 @@
                 </div>
                 <div class="input-box">
                     <select name="categ" id="selector-categoria">
-                        <option value="" selected>categoria</option>
-                        <option value="adaw">adad</option>
-                        <option value="adaw">adad</option>
+                        <option value="" selected>categoria</option>                        
+                        {% for categoria in categorias %}
+                        <option value="{{categoria.codigo}}">{{categoria.nombre}}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="input-box">

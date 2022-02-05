@@ -8,20 +8,19 @@
     
 
 {% block styles %}
-<link rel="stylesheet" href="{% static 'styles/test.css' %}">
+<link rel="stylesheet" href="{% static 'styles/cajas.css' %}">
 
 {% endblock styles %}
     
 
 {% block content %}
 {% for i in hilos %}
-<div class="caja" style="background-image: url(media/{{i.imagen}});">
+<a class="caja" style="background-image: url(/media/{{i.imagen}});" href="/hilo/{{i.id}}">
     <div class="info">
-        <div class="categoria">{{i.categoria.codigo}}</div>
-        <div class="comentarios">99</div>
+        <div class="categoria">{{i.categoria.codigo}}</div><div class="comentarios">99</div>
     </div>
     <p class="titulo">{{i.titulo}}</p>
-</div>
+</a>
 {% endfor %}
 
 

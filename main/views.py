@@ -4,7 +4,8 @@ from .models import *
 # Create your views here.
 def main(request):
     hilos = Hilo.objects.all()
-    return render(request,'home.html',context={'hilos':hilos})
+    categorias = Categoria.objects.all()
+    return render(request,'home.html',context={'hilos':hilos,'categorias':categorias})
 
 def upload(request):
     if request.method == 'POST':
@@ -14,7 +15,17 @@ def upload(request):
             titulo = request.POST.get('titulo'),
             contenido = request.POST.get('contenido'),
             imagen = request.FILES['file'],
-            categoria = Categoria.objects.get(codigo='ECO')
+            categoria = Categoria.objects.get(codigo=request.POST.get('categ'))
         )
         hilo.save()
         return redirect(main)
+
+def hilo(request,id):
+    pass
+
+def categoria(request,codigo):
+    hilos = Hilo.objects.filter(
+        categoria= Categoria.objects.get(codigo=codigo)
+        )
+    categorias = Categoria.objects.all()
+    return render(request,'home.html',context={'hilos':hilos,'categorias':categorias})
