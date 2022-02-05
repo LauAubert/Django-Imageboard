@@ -50,3 +50,10 @@ nav .title{
 nav .icon:hover{
     color: var(--color3);
 }
+
+body{
+    --color1:#222831;
+    --color2:#393e46;
+    --color3:#0092ca;
+    --color4:#eeeeee;
+}
