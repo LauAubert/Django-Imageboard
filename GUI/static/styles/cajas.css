@@ -95,3 +95,6 @@ body{
         height: calc(92vw/2);
     }
 } 
+body{
+    overflow-x: hidden;
+}

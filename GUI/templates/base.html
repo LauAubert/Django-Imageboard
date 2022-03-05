@@ -110,9 +110,17 @@
                 <div class="input-box">
                     <textarea type="text" id='texto' name="contenido" placeholder="Escribe el contenido de tu hilo..."></textarea>
                 </div>
+
+                <div class="errores">
+                    <p class="error hidden" id="error-imagen">   <b>Imagen:   </b> Seleccione una imagen para el hilo.</p>
+                    <p class="error hidden" id="error-titulo">   <b>Titulo:   </b> El titulo debe tener entre 3 y 40 caracteres.</p>
+                    <p class="error hidden" id="error-categoria"><b>Categoría:</b> Seleccione una categoría válida.</p>
+                    <p class="error hidden" id="error-texto">    <b>Texto:    </b> Debes poner una descripción al hilo.</p>
+                </div>
                 <button type="submit" id='submit-post'>Subir</button>
 
             </form>
+
         </div>
 
         <script src="{% static 'scripts/aside.js' %}"></script>

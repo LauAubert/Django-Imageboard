@@ -56,4 +56,8 @@ body{
     --color2:#393e46;
     --color3:#0092ca;
     --color4:#eeeeee;
+    margin: auto;
+    /* font-size: 0; */
+    background-color: var(--color1);
+
 }

@@ -110,3 +110,20 @@ textarea:focus{
     }
 
 }
+
+
+p.error{
+    color: var(--color3);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    padding: auto;
+    display: inline-block;
+    padding: 4px;
+}
+
+.errores{
+    margin: 20px 40px;
+}
+p.error.hidden{
+    display: none;
+}

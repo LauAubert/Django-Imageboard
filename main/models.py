@@ -8,6 +8,8 @@ class Categoria(models.Model):
 
     def __str__(self) -> str:
         return f'{self.codigo} - {self.nombre}'
+    class Meta:
+        ordering = ['nombre']
 
 class Hilo(models.Model):
     titulo = models.CharField(max_length=30)
