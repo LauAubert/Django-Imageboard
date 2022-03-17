@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block titulo %}
+    Boardy - Hilo
+{% endblock titulo %}
+    
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'styles/hilo.css' %}">
+
+{% endblock styles %}
+    
+
+{% block content %}
+<div class="hilo">
+    <div class="categoria">&emsp;Boardy/random</div>
+
+    <div class="imagen-hilo">
+        <img src="/media/planetas.jpg" alt="">
+    </div>
+    <h1>Mappa dejo que desear con la adaptacion de SNK</h1>
+    <div class="texto">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus ipsum, ab qui ipsa sequi amet debitis. Saepe dolorem adipisci quaerat maiores architecto nobis aliquid perspiciatis, illum ullam, enim, quae earum?</p>
+    </div>
+</div>
+<div class="comentarios">
+    <form class="form-comentario" method="post" id="form-comm" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="input-comm-file">
+            <h3 id="nombre-archivo-comm">Seleccione una imagen</h3>
+            <input type="file" name="file" id="archivo-comm" accept="image/*">
+            <span style="display: inline-block;">
+                <label for="archivo-comm">
+                    <i class="fas fa-upload" aria-hidden="true"></i>
+                </label><div class="borrar-archivo-comm">
+                    <i class="fas fa-times" aria-hidden="true"></i></div>
+                </div>
+            </span>
+        <textarea name="" cols="30" rows="10" id="txt-comentario" placeholder="Añade un comentario..."></textarea>
+        <div class="opciones">
+            <input type="checkbox" name="" id="hide-box">
+            <label for="hide-box">Hide</label>
+            <div class="espacio"></div>
+            <button type="submit">Comentar</button>
+        </div>
+    </form>
+    <!-- <div class="comentario"></div>
+    <div class="comentario"></div>
+    <div class="comentario"></div> -->
+</div>
+<script src="{% static 'scripts/newcomment.js' %}"></script>
+
+
+{% endblock content %}
+    

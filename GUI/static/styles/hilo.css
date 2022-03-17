@@ -1,0 +1,198 @@
+.categoria{
+    width: 100%;
+    background-color: var(--color2);
+    padding: 8px 0;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.contenido{
+    /* margin: auto; */
+    display: flex;
+    width: 100%;
+}
+
+.hilo{
+    position: relative;
+    right: 0;
+    width: 40%;
+    /* background-color: red; */
+    /* height: 200vh; */
+    height: auto;
+    display: inline-block;
+    flex: 50%;
+    padding: 8px;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin: 8px;
+    color: var(--color4);
+}
+
+
+.comentarios{
+    /* position: relative; */
+    /* width: 40%; */
+    /* background-color: aliceblue; */
+    /* height: 200vh; */
+    margin: 0;
+    flex: 50%;
+    margin: 8px;
+}
+.imagen-hilo{
+    /* display: inline-block; */
+    /* margin: 20px 5px; */
+    max-width: 50%;
+    max-height: 100%;  
+    margin-left: 0;
+    float: left;
+    margin-right: 8px;
+}
+.imagen-hilo img{
+    max-width: 100%;
+    max-height: 100%;  
+
+}
+.hilo p{
+    display: block;
+}
+
+.form-comentario{
+    background-color: var(--color2);
+    height: auto;
+    border-radius: 10px;
+}
+
+.input-comm-file{
+    /* margin: 10px 30px; */
+    align-self: center;
+    text-align: center;
+}
+.input-comm-file input[type="file"]{
+    display: none;
+}
+.input-comm-file label{
+    color: var(--color4);
+    background-color: var(--color3);
+    padding: 7px;
+    width: 35px;
+    border-radius: 10px 0 0 10px;
+    display: inline-block;
+    border: 1px solid var(--color1);
+}
+.input-comm-file label:hover , .borrar-archivo:hover{
+    color: rgba(0, 0, 0, .8);
+}
+.borrar-archivo-comm{
+    display: inline-block;
+    color: var(--color4);
+    background-color: var(--color3);
+    padding: 7px;
+    width: 35px;
+    border-radius: 0 10px 10px 0;
+    border: 1px solid var(--color1);
+
+}
+.input-comm-file label:hover , .borrar-archivo-comm:hover{
+    color: rgba(0, 0, 0, .8);
+}
+
+.input-comm-file button{
+    margin: auto;
+    display: block;
+    width: 85%;
+    height: 30px;
+    background-color: var(--color3);
+    color: var(--color4);
+    border: none;    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 7px;
+}
+.input-comm-file button:hover{
+    color: rgba(0, 0, 0, .7);
+}
+.input-comm-file{
+    display: inline-block;
+    background-color: var(--color1);
+    font-size: 15px;
+    width: 95%;
+    margin: auto;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+.input-comm-file h3{
+    display: inline-block;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--color4);
+    font-style: oblique;
+}
+#txt-comentario{
+    width: 93%;
+    border-radius: 10px;
+    height: 170px;
+    background-color: var(--color1);
+    padding: 1%;
+    margin-bottom: 10px;
+}
+#txt-comentario:focus{
+    height: 170px;
+}
+.opciones .espacio{
+    display: inline-block;
+    width: calc(90% - 120px);
+}
+.opciones{
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color4);
+    padding-bottom: 10px ;
+}
+
+.opciones button{
+    margin: auto;
+    /* width: 85%; */
+    height: 30px;
+    background-color: var(--color3);
+    color: var(--color4);
+    border: none;    
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 7px;
+}
+.opciones button:hover{
+    color: rgba(0, 0, 0, .7);
+}
+/* ---------------------------------------------------------------------------------------------------- */
+@media (max-width:895px){
+    .hilo{
+        display: block;
+        width: 95%;
+        /* background-color: green; */
+    }
+    .imagen-hilo{
+        display: block;
+        max-width: 100%;
+        margin: auto;
+    }
+
+}
+@media (max-width:700px){
+    .contenido{
+        display: block;
+    }
+    .hilo{
+        display: block;
+        width: 95%;
+        /* background-color: blue; */
+        height: auto;
+    }
+    .comentarios{
+        display: block;
+    }
+    .imagen-hilo{
+        display: block;
+        max-width: 100%;
+        margin: auto;
+    }
+}

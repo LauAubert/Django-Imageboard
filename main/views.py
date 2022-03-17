@@ -21,9 +21,13 @@ def upload(request):
         return redirect(main)
 
 def hilo(request,id):
-    pass
+    '''Muestra un hilo y sus comentarios'''
+    categorias = Categoria.objects.all()
+    return render(request,'thread.html',context={'categorias':categorias})
 
 def categoria(request,codigo):
+    '''Muestra los hilos de determinada categoría'''
+    categoria = Categoria.objects.get(codigo=codigo)
     hilos = Hilo.objects.filter(
         categoria= Categoria.objects.get(codigo=codigo)
         )
