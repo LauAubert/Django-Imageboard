@@ -164,7 +164,7 @@
     color: rgba(0, 0, 0, .7);
 }
 /* ---------------------------------------------------------------------------------------------------- */
-@media (max-width:895px){
+@media (max-width:993px){
     .hilo{
         display: block;
         width: 95%;
@@ -177,7 +177,7 @@
     }
 
 }
-@media (max-width:700px){
+@media (max-width:769px){
     .contenido{
         display: block;
     }
