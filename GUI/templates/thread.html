@@ -9,6 +9,7 @@
 
 {% block styles %}
 <link rel="stylesheet" href="{% static 'styles/hilo.css' %}">
+<link rel="stylesheet" href="{% static 'styles/comment.css' %}">
 
 {% endblock styles %}
     
@@ -46,8 +47,28 @@
             <button type="submit">Comentar</button>
         </div>
     </form>
+    <div class="comentario">
+        <div class="foto">ANON</div>
+        <div class="header">
+            <span class="tag optag">OP</span>
+            <span class="nombre">Anónimo</span>
+            <span class="tag">ABCDEFGH</span>
+            <span class="tag idtag">XYZ</span>
+            <span class="tiempo">24H</span>
+            <span class="icono"><i class="fas fa-flag"></i></span>
+        </div>
+        <div class="respuestas">
+            <a href="">>>QWERQWER</a>
+            <a href="">>>QWERQWER</a>
+            <a href="">>>QWERQWER</a>
+        </div>
+        <div class="contenido-comm">
+            <div class="media-comm"><img src="/media/dragon.jpg" alt=""></div>
+            <div class="texto-comm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus odit nobis, vel ipsam libero consectetur sequi, molestiae odio asperiores magnam voluptas voluptates eveniet fuga id atque ullam obcaecati amet nihil.</div>
+        </div>
+
+    </div>    
     <!-- <div class="comentario"></div>
-    <div class="comentario"></div>
     <div class="comentario"></div> -->
 </div>
 <script src="{% static 'scripts/newcomment.js' %}"></script>
