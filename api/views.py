@@ -14,17 +14,49 @@ def threads(request):
         try:    offset = int(request.GET.get('offset'))
         except: pass 
         print(see,offset)
-        threads_raw = serializers.serialize('python',Hilo.objects.all()[offset:see+offset])     # serializo todo
-        threads = [d['fields'] for d in threads_raw]                                            # lo formateo bien
-        for d in threads: 
-            d.pop('usuario',None)
-            d.pop('contenido',None)
-        threads = [serialFecha(d,['fecha_creacion','fecha_actualizado']) for d in threads]      # formateo las fechas
-
-
-
+        ser_hilo = SerializadorHilo()
+        threads = ser_hilo.serialize(Hilo.objects.all()[offset:see+offset])
         return HttpResponse(json.dumps(threads))
+
 def category(request):pass
-def thread(request):pass
-def threadComments(request):pass
+def thread(request,code):
+    thread = Hilo.objects.get(codigo=code)
+    ser_hilo = SerializadorHilo()
+    thread = ser_hilo.serialize([thread])
+    return HttpResponse(json.dumps(thread))
+
+def threadComments(request,code):
+    see = 20
+    try:offset = int(request.GET.get('offset'))
+    except:offset=0
+    if request.method == 'GET':
+        comments = Comentario.objects.filter(
+            hilo=Hilo.objects.get(codigo=code)) [offset:offset+see]
+        ser_comm = SerializadorComentario()
+        comments = ser_comm.serialize(comments)
+        
+    return HttpResponse(json.dumps(comments))
+
+class SerializadorHilo(serializers.get_serializer('python')):
+    def serialize(self,obj):
+        threads = super().serialize(obj)
+        threads = [d['fields'] for d in threads]
+        # print('Largo Ser: ',len(obj))
+        for d in threads: 
+            if len(obj) >1:d.pop('contenido',None)
+            d.pop('usuario',None)            
+        threads = [serialFecha(d,['fecha_creacion','fecha_actualizado']) for d in threads]
+        return threads
+    
+class SerializadorComentario(serializers.get_serializer('python')):
+    def serialize(self,obj):
+        comments = super().serialize(obj,use_natural_foreign_keys=True)
+        comments = [d['fields'] for d in comments]
+        for comment in comments:
+            comment.pop('usuario',None)
+            comment['respuestas'] = comment['respuestas'].split('-')
+            if comment['respuestas'][0] == '':comment['respuestas'].pop()
+        comments = [serialFecha(d,['fecha']) for d in comments]
+        return comments
+
 

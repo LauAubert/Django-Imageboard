@@ -28,14 +28,23 @@ class Hilo(models.Model):
 
     class Meta:
         ordering = ['-fecha_actualizado','titulo']
+    def natural_key(self):
+        return self.codigo
 
 
-# class comentario
-    # usuario
-    # hilo
-    # fecha
-    # contenido
-    # 
+class Comentario(models.Model):
+    usuario = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
+    hilo = models.ForeignKey(Hilo, on_delete=models.CASCADE)
+    fecha = models.DateTimeField(default=datetime.datetime.now())
+    texto = models.TextField()
+    imagen = models.ImageField(blank=True)
+    codigo = models.CharField(max_length=8,default=get_random_string(8,
+        allowed_chars=string.ascii_uppercase+string.digits))
+    respuestas = models.CharField(max_length=255, blank=True,default='')
+    es_op = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['-fecha']
 
 def serialFecha(modelo,fechas): 
     try:
